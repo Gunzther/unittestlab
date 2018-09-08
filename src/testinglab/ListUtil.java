@@ -30,15 +30,14 @@ public class ListUtil {
 	}
     
     /**
-     * Sort the array.
+     * Sort the items in an array.
      * Find the index of the element in an array by binary search process.
      * The array may be empty but not null.
      * If the array contain null values, they will count as a unique element.
      * 
      * @param array an array of elements
      * @param element to search for
-     * @return the index of the first occurrence of the specified element in this array, 
-     * 			or -1 if this array does not contain the element.
+     * @return the index of the element in this array, or -1 if this array does not contain the element.
      */
     public static <T extends Comparable<? super T>> int binarySearch(T[] array, T element) {
     	if ( array == null ) throw new NullPointerException("Array must not be null");
