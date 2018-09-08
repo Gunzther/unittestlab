@@ -58,7 +58,7 @@ public class ListUtilTest {
 	}
 	
 	@Test
-	public void testNullElement() {
+	public void testNullElementInCountunique() {
 		List<?> list = Arrays.asList(null, null);
 		assertEquals(1, ListUtil.countUnique(list));
 	}
@@ -67,5 +67,53 @@ public class ListUtilTest {
 	public void testNullList() {
 		List<?> list = null;
 		ListUtil.countUnique(list);
+	}
+	
+	@Test
+	public void testFirstPositionElement() {
+		String[] array1 = {"A", "B", "D", "Z", "C"};
+		Integer[] array2 = {3, 2, 5, 1, 0};
+		assertEquals(0, ListUtil.binarySearch(array1, "A"));
+		assertEquals(0, ListUtil.binarySearch(array2, 0));
+	}
+	
+	@Test
+	public void testThirdPositionElement() {
+		String[] array1 = {"A", "B", "D", "Z", "C"};
+		Integer[] array2 = {3, 2, 5, 1, 0};
+		assertEquals(2, ListUtil.binarySearch(array1, "D"));
+		assertEquals(2, ListUtil.binarySearch(array2, 2));
+	}
+	
+	@Test
+	public void testMiddleElementOfFiveItemsArray() {
+		Character[] array1 = {'A', 'A', 'A', 'A', 'A'};
+		Integer[] array2 = {1, 1, 1, 1, 1};
+		assertEquals(2, ListUtil.binarySearch(array1, 'A'));
+		assertEquals(2, ListUtil.binarySearch(array2, 1));
+	}
+	
+	@Test
+	public void testNoElementInArray() {
+		Character[] array = {'A', 'B', 'C'};
+		assertEquals(-1, ListUtil.binarySearch(array, 'D'));
+	}
+	
+	@Test
+	public void testEmptyArray() {
+		String[] array = new String[10];
+		assertEquals(-1, ListUtil.binarySearch(array, "something"));
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testNullElementInBinary() {
+		String[] array = {"A", "B", "D", "Z", "C"};
+		ListUtil.binarySearch(array, null);
+	}
+	
+	@Test (expected = NullPointerException.class)
+	public void testNullArray() {
+		String[] array = null;
+		ListUtil.binarySearch(array, "A");
 	}
 }
