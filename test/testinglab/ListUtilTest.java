@@ -35,13 +35,13 @@ public class ListUtilTest {
 	@Test
 	public void testListOfItemsInDifferentTypes() {
 		List<?> list1 = Arrays.asList('a', 'a', 'b', 1, 1, 2, 3);
-		List<?> list2 = Arrays.asList('a', 'a', 'b', 1, 2, 2, "one", "two");
+		List<?> list2 = Arrays.asList('a', 'a', 'b', 1, 2, "one");
 		assertEquals(5, ListUtil.countUnique(list1));
-		assertEquals(6, ListUtil.countUnique(list2));
+		assertEquals(5, ListUtil.countUnique(list2));
 	}
 	
 	@Test
-	public void testListOfSameItemsInDifferentTypes() {
+	public void testListOfSameValueItemsInDifferentTypes() {
 		List<?> list = Arrays.asList(1, '1', "1");
 		assertEquals(3, ListUtil.countUnique(list));
 	}
