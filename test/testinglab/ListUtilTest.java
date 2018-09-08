@@ -71,18 +71,26 @@ public class ListUtilTest {
 	
 	@Test
 	public void testFirstPositionElement() {
-		String[] array1 = {"A", "B", "D", "Z", "C"};
-		Integer[] array2 = {3, 2, 5, 1, 0};
+		String[] array1 = {"A", "B", "D", "Z", "C"}; // A, B, C, D, Z
+		Integer[] array2 = {3, 2, 5, 1, 0}; // 0, 1, 2, 3, 5
 		assertEquals(0, ListUtil.binarySearch(array1, "A"));
 		assertEquals(0, ListUtil.binarySearch(array2, 0));
 	}
 	
 	@Test
 	public void testThirdPositionElement() {
-		String[] array1 = {"A", "B", "D", "Z", "C"};
-		Integer[] array2 = {3, 2, 5, 1, 0};
-		assertEquals(2, ListUtil.binarySearch(array1, "D"));
+		String[] array1 = {"A", "B", "D", "Z", "C"}; // A, B, C, D, Z
+		Integer[] array2 = {3, 2, 5, 1, 0}; // 0, 1, 2, 3, 5
+		assertEquals(2, ListUtil.binarySearch(array1, "C"));
 		assertEquals(2, ListUtil.binarySearch(array2, 2));
+	}
+	
+	@Test
+	public void testMiddleElementOfFourItemsArray() {
+		Character[] array1 = {'A', 'A', 'A', 'A'};
+		Integer[] array2 = {1, 1, 1, 1};
+		assertEquals(1, ListUtil.binarySearch(array1, 'A'));
+		assertEquals(1, ListUtil.binarySearch(array2, 1));
 	}
 	
 	@Test
@@ -101,7 +109,7 @@ public class ListUtilTest {
 	
 	@Test
 	public void testEmptyArray() {
-		String[] array = new String[10];
+		String[] array = {};
 		assertEquals(-1, ListUtil.binarySearch(array, "something"));
 	}
 	
