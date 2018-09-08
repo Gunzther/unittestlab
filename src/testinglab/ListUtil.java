@@ -1,6 +1,7 @@
 package testinglab;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -27,4 +28,33 @@ public class ListUtil {
     	}
 		return temp.size();
 	}
+    
+    /**
+     * Sort the array.
+     * Find the index of the element in an array by binary search process.
+     * The array may be empty but not null.
+     * If the array contain null values, they will count as a unique element.
+     * 
+     * @param array an array of elements
+     * @param element to search for
+     * @return the index of the first occurrence of the specified element in this array, 
+     * 			or -1 if this array does not contain the element.
+     */
+    public static <T extends Comparable<? super T>> int binarySearch(T[] array, T element) {
+    	if ( array == null ) throw new NullPointerException("Array must not be null");
+    	if ( element == null ) throw new IllegalArgumentException("Search element must not be null");
+    	Arrays.sort(array);
+    	int start = 0;
+    	int end = array.length - 1;
+    	
+    	while(start <= end) {
+    		int midPos = (start + end)/2;
+    		int compare = element.compareTo(array[midPos]);
+    		
+    		if ( compare == 0 ) return midPos;
+    		else if ( compare > midPos ) start = midPos + 1;
+    		else end = midPos - 1;
+    	}
+		return -1;
+    }
 }
