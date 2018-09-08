@@ -15,7 +15,8 @@
 | Test case                          |  Expected Result          |
 |------------------------------------|---------------------------|
 | first position element             |  return 0                 |
-| third position element             |  return 0                 |
+| third position element             |  return 2                 |
+| middle element of four items array |  return 1                 |
 | middle element of five items array |  return 2                 |
 | element does not in array          |  return -1                |
 | empty array                        |  return -1                |
