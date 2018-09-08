@@ -86,7 +86,7 @@ public class ListUtilTest {
 	}
 	
 	@Test
-	public void testMiddleElementOfFourItemsArray() {
+	public void testMiddleElementOfFourItemsArray() { // amount of items is even
 		Character[] array1 = {'A', 'A', 'A', 'A'};
 		Integer[] array2 = {1, 1, 1, 1};
 		assertEquals(1, ListUtil.binarySearch(array1, 'A'));
@@ -94,7 +94,7 @@ public class ListUtilTest {
 	}
 	
 	@Test
-	public void testMiddleElementOfFiveItemsArray() {
+	public void testMiddleElementOfFiveItemsArray() { // amount of items is odd
 		Character[] array1 = {'A', 'A', 'A', 'A', 'A'};
 		Integer[] array2 = {1, 1, 1, 1, 1};
 		assertEquals(2, ListUtil.binarySearch(array1, 'A'));
