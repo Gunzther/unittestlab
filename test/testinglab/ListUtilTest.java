@@ -10,6 +10,11 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * JUnit test for ListUtil
+ * 
+ * @author Gunthee Tawewatmongkol
+ */
 public class ListUtilTest {
 	
 	@Before
