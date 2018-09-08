@@ -94,7 +94,7 @@ public class ListUtilTest {
 	}
 	
 	@Test
-	public void testNoElementInArray() {
+	public void testElementDoesNotInArray() {
 		Character[] array = {'A', 'B', 'C'};
 		assertEquals(-1, ListUtil.binarySearch(array, 'D'));
 	}
